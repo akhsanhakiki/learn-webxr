@@ -3,7 +3,7 @@ import os
 
 def serve():
     os.chdir(os.path.dirname(__file__))
-    server = HTTPServer(('localhost', 8080), SimpleHTTPRequestHandler)
+    server = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
     server.serve_forever()
 
 def main():
