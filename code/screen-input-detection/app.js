@@ -130,9 +130,10 @@ class App{
         this.renderer.xr.enabled = true; 
         
         const self = this;
-        
+        let controller, controller1;
+
         function onSessionStart(){
-            self.ui.mesh.position.set(0, -0.5, -1.1);
+            self.ui.mesh.position.set(0, -0.15, -0.3);
             self.camera.add(self.ui.mesh);
         }
         
@@ -145,10 +146,10 @@ class App{
         this.gestures = new ControllerGestures(this.renderer);
         this.gestures.addEventListener('tap', (ev)=>{
             self.ui.updateElement('info', 'tap');
-            if(!self.knight.Object.visible){
-                self.knight.Object.visible = true;
-                self.knight.Object.position.set(0, -0.3, -0.5).add(ev.position);
-                self.scene.add(self.knight.Object);
+            if(!self.knight.object.visible){
+                self.knight.object.visible = true;
+                self.knight.object.position.set(0, -0.3, -0.5).add(ev.position);
+                self.scene.add(self.knight.object);
             } 
         });
 
